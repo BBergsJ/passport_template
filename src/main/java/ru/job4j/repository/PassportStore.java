@@ -59,13 +59,6 @@ public class PassportStore {
         ));
     }
 
-//    public Passport findBySerial(int serial) {
-//        return client.getForEntity(
-//                String.format("%s/find?serial=%s", url, serial),
-//                Passport.class
-//        ).getBody();
-//    }
-
     public List<Passport> findBySerial(int serial) {
         return getList(String.format(
                 "%s/find?serial=%s", url, serial
