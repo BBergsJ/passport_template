@@ -49,10 +49,10 @@ public class PassportController {
                     HttpStatus.OK
             );
         } else {
-            var rsl = passportService.findBySerial(Integer.parseInt(serial));
+            List<Passport> rsl = passportService.findBySerial(Integer.parseInt(serial));
             return new ResponseEntity<>(
                     rsl,
-                    HttpStatus.OK
+                    rsl.size() > 0 ? HttpStatus.OK : HttpStatus.NOT_FOUND
             );
         }
     }
